@@ -14,7 +14,7 @@ const cadProduto = new Schema({
         required: true,
     },   
     categoria:{
-        type: String,
+        type: [String],
         required: false,
     },
 },{

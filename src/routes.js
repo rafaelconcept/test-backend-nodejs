@@ -13,13 +13,8 @@ route.get("/",(req, res)=>{
 route.post("/cad_produto",produtos.cadastro);
 route.post("/edit_produto",produtos.editar);
 route.post("/list_produto",produtos.listar);
+route.post("/delet_produto",produtos.deletar);
 
-/*
-route.post("/cad_tarefa",tarefas.cadastro);
-route.post("/list_tarefa",tarefas.listar);
 
-route.post("/cad_missao",missao.cadastro);
-route.post("/pegar_missao",missao.pegar);
-*/
 
 module.exports = route
