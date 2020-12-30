@@ -80,4 +80,9 @@ importe o arquivo "anotaai-Insomnia_2020-12-29.json"
 
     Em "jwt_usuario" pode deixar "1" como default pois não há sistema de criação de usuario.
   
+<strong>Para conectar ao MongoDB Compass use: </strong>
+<code>
+  mongodb+srv://rafaelconcept:<password>@cluster0.fe79l.mongodb.net/test
+<code>
 
+Senha: teste-anotaai
