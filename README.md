@@ -1,15 +1,30 @@
 <h1>Backend Analyst Candidate Testing</h1>
 
-Hello dear developer, in this test we will analyze your general knowledge and even speed of development. Below we will explain everything that will be needed.
-Do not be alarmed, we do not expect everyone to be able to complete all tasks, this test is the same presented for candidates of all experience levels, so do what you can without worry.
 
-<strong>The challenge</strong>
+<strong>Como rodar</strong>
 
-Your challenge is to develop an API, using Node.JS, for a product catalog management application. Thus, you must analyze and convert the user stories below into routes of an application.
- 
-<strong>User stories:</strong>
+Clone esse repositorio e rode "npm install" para que todas as dependencias sejam instaladas.
+Server rodando com "yarn server" ou "node src/server.js" na porta 3333
 
-- As a user I would like to register a product so that I can have access to the data of this product in the future (Title, description, price, category)
+<strong>Caso use o Insomnia para requisições:</strong>
+importe o arquivo "adicionando arquivo do insomnia para requests de rotas"
+
+<strong>Explicação de rotas:</strong>
+
+- /cad_produto
+  Usada para cadastrar um produto no seguinte formato json:
+  <code>
+    {
+      "jwt_usuario":"1",
+      "titulo":"Bola de couro2",
+      "descricao":"Bola mais resistente",
+      "preco":20.90,
+      "categoria":["brinquedo"]
+    }
+  </code>
+    Em "jwt_usuario" pode deixar "1" como default pois não há sistema de criação de usuario.
+  
+  
 - I as a user would like to be able to associate and edit a product category;
 - As a user I would like to be able to access the list of all products;
 - As a user I would like to be able to filter products by name or category;
