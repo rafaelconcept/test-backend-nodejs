@@ -7,7 +7,7 @@ Clone esse repositorio e rode "npm install" para que todas as dependencias sejam
 Server rodando com "yarn server" ou "node src/server.js" na porta 3333
 
 <strong>Caso use o Insomnia para requisições:</strong>
-importe o arquivo "adicionando arquivo do insomnia para requests de rotas"
+importe o arquivo "anotaai-Insomnia_2020-12-29.json"
 
 <strong>Explicação de rotas:</strong>
 
@@ -51,7 +51,7 @@ importe o arquivo "adicionando arquivo do insomnia para requests de rotas"
     {
       "jwt_usuario":"1",
       "id_produto":"5febab0f7335783f84509236",
-      "novo_titulo":"",
+      "novo_titulo":"Novo Titulo",
       "nova_descricao":"",
       "novo_preco":""
       
