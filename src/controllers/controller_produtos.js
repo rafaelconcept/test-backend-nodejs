@@ -6,11 +6,13 @@ module.exports = {
 
     async cadastro(req, res){
         
-        if(req.body.id_usuario==null || req.body.titulo == null || req.body.preco == null){
+        if(req.body.jwt_usuario==null || req.body.titulo == null || req.body.preco == null){
             return res.json({ criado:false});
         }
 
-        id_usuario = req.body.id_usuario,
+        //Caso houvesse um banco para usuarios ele seria validado
+
+        jwt_usuario = req.body.jwt_usuario,
 
         produto_obj = {
             titulo:req.body.titulo,
@@ -30,10 +32,11 @@ module.exports = {
 
     async editar(req, res){
         
-        if(req.body.id_usuario==null || req.body.id_produto==null){
+        if(req.body.jwt_usuario==null || req.body.id_produto==null){
             return res.json({ criado:false});
         }
 
+        //Caso houvesse um banco para usuarios ele seria validado
         
         //Verificar se Id digitado ta no formato correto
         if (!req.body.id_produto.match(/^[0-9a-fA-F]{24}$/)) {
@@ -89,6 +92,8 @@ module.exports = {
             return res.json(lista);
         }
 
+        //Caso houvesse um banco para usuarios ele seria validado
+
         //Verificando se a busca é por nome
         if(req.body.categoria==null && req.body.titulo != null){
             const lista = await Produto.find({titulo:{ "$regex": req.body.titulo, "$options": "i" }});
@@ -112,10 +117,12 @@ module.exports = {
 
     async deletar(req, res){
         
-        if(req.body.id_usuario==null || req.body.id_produto==null){
+        if(req.body.jwt_usuario==null || req.body.id_produto==null){
             return res.json({ criado:false});
         }
         
+        //Caso houvesse um banco para usuarios ele seria validado
+
         //Verificar se Id digitado ta no formato correto
         if (!req.body.id_produto.match(/^[0-9a-fA-F]{24}$/)) {
             return res.json({ formato:"invalido" });
@@ -127,7 +134,7 @@ module.exports = {
             return res.json({ erro:"produto não encontrado, verifique o id" });
         }
 
-        const deletar = await Produto.remove({ _id: req.body.id_produto })
+        const deletar = await Produto.deleteOne({ _id: req.body.id_produto })
 
         return res.json({ removido:true });
     }
